@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>User List</h1>
+  <a class="btn btn-primary" [routerLink]="['/user', 'create']">Create</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td><a [routerLink]="['/user', u.id]">{{u.id}}</a></td>
+        <td>{{u.name}}</td>
+        <td>{{u.email}}</td>
+        <td><img style="width: 100px; height: 70px;" [src]="u.photo" alt=""></td>
+        <td><button><a [routerLink]="['/user', u.id, 'edit']">Edit</a></button></td>
+        <td><button (click)="deleteUser(u.id)">Delete</button></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

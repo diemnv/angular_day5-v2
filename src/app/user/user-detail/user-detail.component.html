@@ -1,0 +1,9 @@
+<h1>User Detail</h1>
+<div *ngIf="user; else loading">
+  <p>{{user.name}}</p>
+  <p>{{user.email}}</p>
+  <p><img [src]="user.photo" alt=""></p>
+</div>
+<ng-template #loading>
+  <p>loading...</p>
+</ng-template>
